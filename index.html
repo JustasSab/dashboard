@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashborad</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/style.css">
+
+</head>
+<body>
+    <div id="app">
+
+        <!-- Side Bar -->
+        <aside class="vertical-sidebar">
+            <div class="sidebar-header">
+                <a href="#">
+                    <img src="./assets/images/logo.svg" alt="Light Blue">
+                    <h1>Light <span>Blue</span></h1>
+                </a>
+            </div>
+            <ul class="sidebar-items">
+
+                <li class="sidebar-group">
+                    <a href="#">
+                        <img src="./assets/images/home.svg" alt="">
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-group">
+                    <a href="#">
+                        <img src="./assets/images/products.svg" alt="products">
+                        <span>Products</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-group">
+                    <a href="#">
+                        <img src="./assets/images/orders.svg" alt="orders">
+                        <span>Orders</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-group">
+                    <a href="#">
+                        <img src="./assets/images/customers.svg" alt="customers">
+                        <span>Customers</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-group">
+                    <a href="#">
+                        <img src="./assets/images/chat.svg" alt="chat">
+                        <span>Chat</span>
+                    </a>
+                </li>
+
+            </ul>
+        </aside>
+
+        <!-- Right Content -->
+        <div class="layout-wrapper">
+            <!-- Header -->
+            <header>
+                <ul class="header-item">
+
+                    <li class="search">
+                        <form class="form-search">
+                            <div class="search-group">
+                                <img src="./assets/images/search.svg" alt="search">
+                                <input type="text" placeholder="Search">
+                            </div>
+                        </form>
+                    </li>
+
+                    <li class="avatar">
+                        <a class="dropdown-toggle" href="#">
+                            <img src="./assets/images/avatar-1.png" alt="User-1">
+                        </a>
+                        <!-- Dropdown -->
+                        <ul class="avatar-dropdown">
+                            <li class="dropdown-top-item">
+                                <a class="avatar-href" href="#">
+                                    <img src="./assets/images/avatar-1.png" alt="User-1">
+                                    <div class="avatar-info">
+                                        <span class="avatar-name">John Doe</span>
+                                        <small class="avatar-role">Admin</small>
+                                    </div>
+                                </a>
+                            </li>
+                            <div class="line"></div>
+                            <li class="dropdown-bottom-item">
+                                <a class="avatar-href" href="#">
+                                    <i class="bx bx-user me-2"></i>
+                                    <span class="align-middle">My Profile</span>
+                                </a>
+                            </li>
+                            <div class="line"></div>
+                            <li class="dropdown-bottom-item">
+                                <a class="avatar-href" href="#">
+                                    <i class="bx bx-credit-card me-2"></i>
+                                    <span class="align-middle">Logout</span>
+                                </a>
+                            </li>
+                            <div class="line"></div>
+                        </ul>
+                    </li>
+
+                </ul>
+            </header>
+    
+            <!-- Main Content -->
+            <main>
+    
+            </main>
+            
+            <!-- Footer -->
+            <footer>
+    
+            </footer>
+        </div>
+
+    </div>
+
+    <script>
+    $(function() {
+        $('.dropdown-toggle').click(function() {
+            $(this).next('.avatar-dropdown').slideToggle();
+        });
+
+        $(document).click(function(e) { 
+            var target = e.target; 
+            if (!$(target).is('.dropdown-toggle') && !$(target).parents().is('.dropdown-toggle')) 
+            //{ $('.dropdown').hide(); }
+            { $('.avatar-dropdown').slideUp(); }
+        });
+    });
+    </script>
+    
+</body>
+</html>

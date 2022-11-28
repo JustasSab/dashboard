@@ -1,0 +1,39 @@
+@import './sass/reset';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap');
+
+// ====================
+// VARIABLES
+// ====================
+$body-bg: #232333;
+$secondary-color: #2b2c40;
+$hover-color: #2b2c40;
+
+// Font
+$montserrat: 'Montserrat', sans-serif;
+
+$text-color: #a3a4cc;
+$text-active-color: rgba(244,244,245,.9);
+
+body {
+    background: $body-bg;
+    height: 100vh;
+    font-family: $montserrat;
+}
+
+#app {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+
+    .layout-wrapper {
+        margin: 40px;
+
+        main {
+            height: 1500px;
+            border: 1px solid #fff;
+        }
+    }
+}
+
+@import './sass/layers/sidebar';
+@import './sass/layers/header';
+@import './sass/layers/footer';

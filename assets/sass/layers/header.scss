@@ -1,0 +1,95 @@
+header {
+    padding: 15px;
+
+    .header-item {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-end;
+        align-items: center;
+
+        li.search {
+            // Search
+            .form-search {
+                .search-group {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    background: $dark-blue;
+                    border-radius: 5px;
+                    padding: 20px;
+                    
+                    img {
+                        width: 15px;
+                        height: 15px;
+                    }
+
+                    input {
+                        margin-left: 10px;
+                        outline: none;
+                        border: none;
+                        background: $dark-blue;
+                        font-size: 18px;
+                        color: $text-color;
+                    }
+                }
+            }
+        }
+
+        // Avatar
+        .avatar {
+            position: relative;
+
+            .dropdown-toggle {
+                img{
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    border: 1px solid $dark-blue;
+                }
+            }
+
+            .avatar-dropdown {
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: -15px;
+                background: linear-gradient(136.36deg,#333964 4.86%,#171a39 94.85%);
+                width: 220px;
+                
+                li a{
+                    color: $text-color;
+                    font-size: 18px;
+                }
+
+                .avatar-href {
+                    display: flex;
+                    flex-direction: row;
+                    padding: 15px;
+
+                    img {
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        border: 1px solid $dark-blue;
+                        margin-right: 15px;
+                    }
+
+                    .avatar-info {
+                        color: $text-color;
+                        font-size: 18px;
+                        font-weight: 500;
+
+                        .avatar-name {
+                            width: 100%;
+                        }
+                    }
+                }
+                .line {
+                    border: 1px solid #444564;
+                    width: 100%;
+                    margin: 5px 0;
+                }
+            }
+        }
+    }
+}
