@@ -16,18 +16,25 @@
     <div id="app">
 
         <!-- Side Bar -->
-        <aside class="vertical-sidebar">
+        <aside id="sidebar" class="vertical-sidebar">
             <div class="sidebar-header">
                 <a href="#">
                     <img src="./assets/images/logo.svg" alt="Light Blue">
                     <h1>Light <span>Blue</span></h1>
                 </a>
+                <a href="javascript:void(0);" class="sidebar-toggler" id="siderbar-toggler-show" onclick="openNav()">
+                    <div class="toggler-arrow-show"></div>
+                </a>
+                <a href="javascript:void(0);" class="sidebar-toggler" id="siderbar-toggler-hide" onclick="closeNav()">
+                    <div class="toggler-arrow-hide"></div>
+                </a>
+
             </div>
             <ul class="sidebar-items">
 
                 <li class="sidebar-group">
                     <a href="#">
-                        <img src="./assets/images/home.svg" alt="">
+                        <img src="./assets/images/home.svg" alt="Dashboard">
                         <span>Dashboard</span>
                     </a>
                 </li>
@@ -115,8 +122,8 @@
             </header>
     
             <!-- Main Content -->
-            <main>
-    
+            <main> 
+                <div class="div1"></div>
             </main>
             
             <!-- Footer -->
@@ -127,6 +134,23 @@
 
     </div>
 
+    <!-- Sidebar toggle -->
+    <script>
+        function openNav() {
+            document.getElementById("sidebar").style.width = "260px";
+            document.getElementById("main").style.marginLeft = "260px";
+            document.getElementById("siderbar-toggler-show").style.display = "none";
+            document.getElementById("siderbar-toggler-hide").style.display = "block";
+        }
+        function closeNav() {
+            document.getElementById("sidebar").style.width = "80px";
+            document.getElementById("main").style.marginLeft= "80px";
+            document.getElementById("siderbar-toggler-hide").style.display = "none";
+            document.getElementById("siderbar-toggler-show").style.display = "block";
+        }
+    </script>
+
+    <!-- Dropdown avatar -->
     <script>
     $(function() {
         $('.dropdown-toggle').click(function() {
