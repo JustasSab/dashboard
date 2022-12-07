@@ -25,17 +25,21 @@ body {
 }
 
 #app {
-    display: grid;
-    grid-template-columns: 260px 1fr;
-
     .layout-wrapper {
         margin: 40px;
+        margin-left: 300px;
+        transition: all 0.5s ease;
 
         main {
             height: 1500px;
             border: 1px solid #fff;
         }
     }
+}
+
+.layout-wrapper.expanded {
+    margin-left: 120px!important;
+    transition: all 0.5s ease;
 }
 
 @import './sass/layers/sidebar';

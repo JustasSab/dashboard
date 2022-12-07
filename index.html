@@ -16,18 +16,19 @@
     <div id="app">
 
         <!-- Side Bar -->
-        <aside id="sidebar" class="vertical-sidebar">
+        <aside id="sidebar" class="sidebar open">
             <div class="sidebar-header">
                 <a href="#">
                     <img src="./assets/images/logo.svg" alt="Light Blue">
-                    <h1>Light <span>Blue</span></h1>
                 </a>
-                <a href="javascript:void(0);" class="sidebar-toggler" id="siderbar-toggler-show" onclick="openNav()">
-                    <div class="toggler-arrow-show"></div>
-                </a>
-                <a href="javascript:void(0);" class="sidebar-toggler" id="siderbar-toggler-hide" onclick="closeNav()">
-                    <div class="toggler-arrow-hide"></div>
-                </a>
+                <h1>Light <span>Blue</span></h1>
+                
+                <!-- <button class="sidebar-btn">
+                    <div class="sidebar-show"></div>
+                </button> -->
+                <button class="sidebar-btn">
+                    <div class="sidebar-hide"></div>
+                </button>
 
             </div>
             <ul class="sidebar-items">
@@ -136,17 +137,24 @@
 
     <!-- Sidebar toggle -->
     <script>
-        function openNav() {
-            document.getElementById("sidebar").style.width = "260px";
-            document.getElementById("main").style.marginLeft = "260px";
-            document.getElementById("siderbar-toggler-show").style.display = "none";
-            document.getElementById("siderbar-toggler-hide").style.display = "block";
-        }
-        function closeNav() {
-            document.getElementById("sidebar").style.width = "80px";
-            document.getElementById("main").style.marginLeft= "80px";
-            document.getElementById("siderbar-toggler-hide").style.display = "none";
-            document.getElementById("siderbar-toggler-show").style.display = "block";
+        const sidebar = document.querySelector(".sidebar");
+        const closeBtn = document.querySelector(".sidebar-btn");
+        const mainContent = document.querySelector(".layout-wrapper");
+
+        closeBtn.addEventListener("click", ()=>{
+            sidebar.classList.toggle("open");
+            sidebar.classList.toggle("close");
+            mainContent.classList.toggle("expanded");
+            menuBtnChange();
+        });
+
+        // following are the code to change sidebar button(optional)
+        function menuBtnChange() {
+            if(sidebar.classList.contains("close")){
+                closeBtn.classList.replace("sidebar-hide", "sidebar-show");
+            }else {
+                closeBtn.classList.replace("sidebar-show","sidebar-hide");
+            }
         }
     </script>
 
