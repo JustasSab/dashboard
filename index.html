@@ -22,12 +22,12 @@
                     <img src="./assets/images/logo.svg" alt="Light Blue">
                     <h1>Light <span>Blue</span></h1>
                 </a>
-                <a href="javascript:void(0);" class="sidebar-toggler" id="siderbar-toggler-show" onclick="openNav()">
+                <!-- <div class="sidebar-toggler" id="siderbar-toggler-show" onclick="openNav()">
                     <div class="toggler-arrow-show"></div>
-                </a>
-                <a href="javascript:void(0);" class="sidebar-toggler" id="siderbar-toggler-hide" onclick="closeNav()">
-                    <div class="toggler-arrow-hide"></div>
-                </a>
+                </div> -->
+                <button class="sidebar-btn" id="sidebar-btn">
+                    <div class="btn-arrow-hide"></div>
+                </button>
 
             </div>
             <ul class="sidebar-items">
@@ -71,7 +71,7 @@
         </aside>
 
         <!-- Right Content -->
-        <div class="layout-wrapper">
+        <div class="layout-wrapper" id="main">
             <!-- Header -->
             <header>
                 <ul class="header-item">
@@ -122,9 +122,9 @@
             </header>
     
             <!-- Main Content -->
-            <main> 
+            <!-- <main> 
                 <div class="div1"></div>
-            </main>
+            </main> -->
             
             <!-- Footer -->
             <footer>
@@ -136,34 +136,56 @@
 
     <!-- Sidebar toggle -->
     <script>
-        function openNav() {
-            document.getElementById("sidebar").style.width = "260px";
-            document.getElementById("main").style.marginLeft = "260px";
-            document.getElementById("siderbar-toggler-show").style.display = "none";
-            document.getElementById("siderbar-toggler-hide").style.display = "block";
-        }
-        function closeNav() {
-            document.getElementById("sidebar").style.width = "80px";
-            document.getElementById("main").style.marginLeft= "80px";
-            document.getElementById("siderbar-toggler-hide").style.display = "none";
-            document.getElementById("siderbar-toggler-show").style.display = "block";
-        }
+        // $(function() {
+        //     $('#sidebar-btn').click(function() {
+        //         $('#sidebar').toggle();
+        //     });
+        // });
+
+
+
+        $(function(){
+            $(".sidebar-btn").click(function(){
+                $("#sidebar").toggleClass("close")
+            });
+        });
+
+        // click outside
+        $(document).mouseup(function(e){ 
+        var container = $("#sidebar");
+            if (!container.is(e.target) && container.has(e.target).length === 0) {
+                $("#sidebar").removeClass("close")
+            }
+        });
+
+
+        // function openNav() {
+        //     document.getElementById("sidebar").style.width = "260px";
+        //     document.getElementById("main").style.marginLeft = "260px";
+        //     document.getElementById("siderbar-toggler-show").style.display = "none";
+        //     document.getElementById("siderbar-toggler-hide").style.display = "block";
+        // }
+        // function closeNav() {
+        //     document.getElementById("sidebar").style.width = "80px";
+        //     document.getElementById("main").style.marginLeft= "80px";
+        //     document.getElementById("siderbar-toggler-hide").style.display = "none";
+        //     document.getElementById("siderbar-toggler-show").style.display = "block";
+        // }
     </script>
 
     <!-- Dropdown avatar -->
     <script>
-    $(function() {
-        $('.dropdown-toggle').click(function() {
-            $(this).next('.avatar-dropdown').slideToggle();
-        });
+        $(function() {
+            $('.dropdown-toggle').click(function() {
+                $(this).next('.avatar-dropdown').slideToggle();
+            });
 
-        $(document).click(function(e) { 
-            var target = e.target; 
-            if (!$(target).is('.dropdown-toggle') && !$(target).parents().is('.dropdown-toggle')) 
-            //{ $('.dropdown').hide(); }
-            { $('.avatar-dropdown').slideUp(); }
+            $(document).click(function(e) { 
+                var target = e.target; 
+                if (!$(target).is('.dropdown-toggle') && !$(target).parents().is('.dropdown-toggle')) 
+                { $('.avatar-dropdown').slideUp(); }
+            });
         });
-    });
     </script>
     
 </body>

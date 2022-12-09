@@ -19,17 +19,20 @@ $text-heading: #696cff;
 
 body {
     background: $bg-body;
-    height: 100vh;
+    // height: 100vh;
     font-family: $montserrat;
     font-size: 15px;
 }
 
 #app {
-    display: grid;
-    grid-template-columns: 260px 1fr;
+    // display: grid;
+    // grid-template-columns: 260px 1fr;
 
-    .layout-wrapper {
-        margin: 40px;
+    #main {
+        // position: relative;
+        // top: 0;
+        // left: 0;
+        // margin: 40px;
 
         main {
             height: 1500px;
