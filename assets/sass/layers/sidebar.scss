@@ -1,42 +1,43 @@
-#sidebar {
+.sidebar{
     box-shadow: 0 0.125rem 0.375rem rgb(0 0 0 / 25%);
-    // height: 100vh; //temp
-    background-color: $bg-color-secondary;
     width: 260px;
-    height: 100vh;
+    height: 100%;
+    background-color: $bg-color-secondary;
     position: fixed;
-    transition:.3s;
-    left: 0;
     top: 0;
-    transition-timing-function: cubic-bezier(0.9,0,1,1);
+    left: 0;
+    z-index: 99;
+    transition: all 0.5s ease;
 
     .sidebar-header {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
         padding: 30px;
-        // position: relative;
+
         a {
-            // align-items: center;
-            // text-decoration: none;
             color: $text-color-active;
 
             img {
-                display: inline-block;
                 margin-right: 10px;
             }
+        }
+        
+        h1 {
+            color: $text-color;
+            font-weight: 300;
+            white-space: nowrap;
+            transition: all 1s ease;
 
-            h1 {
-                display: inline-block;
-                color: $text-color;
-                font-weight: 300;
-                & span {
-                    color: $text-color-active;
-                    font-weight: 500;
-                }
+            & span {
+                color: $text-color-active;
+                font-weight: 500;
             }
         }
         // Sidebar toggler
         .sidebar-btn {
             position: absolute;
-            top: 40px;
+            top: 33px;
             right: -20px;
             border-radius: 50%;
             background-color: #696cff;
@@ -45,7 +46,7 @@
             height: 40px;
             cursor: pointer;
 
-            .btn-arrow-hide {
+            .sidebar-hide {
                 border: 2px solid;
                 border-bottom: 0;
                 border-left: 0;
@@ -59,7 +60,7 @@
                 transform: translateY(-50%) rotate(225deg);
                 color: #fff;
             }
-            .btn-arrow-show {
+            .sidebar-show {
                 border: 2px solid;
                 border-bottom: 0;
                 border-left: 0;
@@ -129,8 +130,24 @@
         }
     }
 }
-.close{
-    left: -260px;
-    transition: .3s;
-    transition-timing-function: cubic-bezier(0.9,0,1,1);
+// Small Sidebar
+.sidebar.close{
+    width: 80px!important;
+
+    h1 {
+        opacity: 0;
+        transition: all 0.1s ease;
+    }
+    .sidebar-items {
+        .sidebar-group {
+            a {
+                span {
+                    display: none;
+                }
+                &::after {
+                    display: none;
+                }
+            }
+        }
+    }
 }
