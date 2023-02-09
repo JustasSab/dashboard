@@ -1,0 +1,44 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+ul, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background: $bg-body;
+    height: 100vh;
+    font-family: $montserrat;
+    font-size: 15px;
+}
+
+#app {
+    .layout-wrapper {
+        margin: 40px;
+        margin-left: 300px;
+        transition: all 0.5s ease;
+
+        main {
+            height: 1500px;
+            border: 1px solid #fff;
+        }
+    }
+}
+
+.layout-wrapper.expanded {
+    margin-left: 120px!important;
+    transition: all 0.5s ease;
+}
