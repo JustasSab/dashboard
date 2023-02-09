@@ -1,22 +1,14 @@
-.sidebar{
-    box-shadow: 0 0.125rem 0.375rem rgb(0 0 0 / 25%);
-    width: 260px;
-    height: 100%;
-    background-color: $bg-color-secondary;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 99;
-    transition: all 0.5s ease;
-
-    .sidebar-header {
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-        padding: 30px;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="/assets/styles/app.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 
 </head>
 <body>
@@ -41,11 +33,37 @@
             <ul class="sidebar-items">
                 <li class="sidebar-group">
                     <a href="#">
+                        <img src="./assets/images/home.svg" alt="Dashboard">
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-group">
+                    <a href="#">
+                        <img src="./assets/images/products.svg" alt="products">
+                        <span>Products</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-group">
+                    <a href="#">
+                        <img src="./assets/images/orders.svg" alt="orders">
+                        <span>Orders</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-group">
+                    <a href="#">
+                        <img src="./assets/images/customers.svg" alt="customers">
+                        <span>Customers</span>
+                    </a>
+                </li>
+                <li class="sidebar-group">
+                    <a href="#">
                         <img src="./assets/images/chat.svg" alt="chat">
                         <span>Chat</span>
                     </a>
                 </li>
-
             </ul>
         </aside>
 
@@ -138,18 +156,18 @@
 
     <!-- Dropdown avatar -->
     <script>
-    $(function() {
-        $('.dropdown-toggle').click(function() {
-            $(this).next('.avatar-dropdown').slideToggle();
-        });
+        $(function() {
+            $('.dropdown-toggle').click(function() {
+                $(this).next('.avatar-dropdown').slideToggle();
+            });
 
-        $(document).click(function(e) { 
-            var target = e.target; 
-            if (!$(target).is('.dropdown-toggle') && !$(target).parents().is('.dropdown-toggle')) 
-            //{ $('.dropdown').hide(); }
-            { $('.avatar-dropdown').slideUp(); }
+            $(document).click(function(e) { 
+                var target = e.target; 
+                if (!$(target).is('.dropdown-toggle') && !$(target).parents().is('.dropdown-toggle')) 
+                //{ $('.dropdown').hide(); }
+                { $('.avatar-dropdown').slideUp(); }
+            });
         });
-    });
     </script>
     
 </body>
